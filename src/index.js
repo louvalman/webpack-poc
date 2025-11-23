@@ -4,32 +4,57 @@ import homePage from './home';
 import menuPage from './menu';
 import aboutPage from './about';
 import contactPage from './contact';
+import { createButton } from './button';
 
+let nav = document.querySelector('nav');
 let contentWrapper = document.querySelector('.content');
 
-let home = document.querySelector('.home');
-let about = document.querySelector('.about');
-let menu = document.querySelector('.menu');
-let contact = document.querySelector('.contact');
+let homeBtn = createButton({
+  label: 'Home',
+  onClick: loadHome,
+  classes: ['btn'],
+});
+nav.appendChild(homeBtn);
 
-homePage();
+let menuBtn = createButton({
+  label: 'Menu',
+  onClick: loadMenu,
+  classes: ['btn'],
+});
+nav.appendChild(menuBtn);
 
-home.addEventListener('click', () => {
+let aboutBtn = createButton({
+  label: 'About',
+  onClick: loadAbout,
+  classes: ['btn'],
+});
+nav.appendChild(aboutBtn);
+
+let contactBtn = createButton({
+  label: 'Contact',
+  onClick: loadContact,
+  classes: ['btn'],
+});
+nav.appendChild(contactBtn);
+
+function loadHome() {
   contentWrapper.innerHTML = '';
   homePage();
-});
+}
 
-menu.addEventListener('click', () => {
+function loadMenu() {
   contentWrapper.innerHTML = '';
   menuPage();
-});
+}
 
-about.addEventListener('click', () => {
+function loadAbout() {
   contentWrapper.innerHTML = '';
   aboutPage();
-});
+}
 
-contact.addEventListener('click', () => {
+function loadContact() {
   contentWrapper.innerHTML = '';
   contactPage();
-});
+}
+
+homePage();
