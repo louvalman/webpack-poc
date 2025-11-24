@@ -1,10 +1,9 @@
-console.log('index.js loaded');
 import './styles.css';
-import homePage from './home';
-import menuPage from './menu';
-import aboutPage from './about';
-import contactPage from './contact';
-import { createButton } from './button';
+import homePage from './pages/home';
+import menuPage from './pages/menu';
+import aboutPage from './pages/about';
+import contactPage from './pages/contact';
+import { createButton } from './components/button';
 
 let nav = document.querySelector('nav');
 let contentWrapper = document.querySelector('.content');
